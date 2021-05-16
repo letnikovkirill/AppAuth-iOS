@@ -216,7 +216,7 @@ typedef NS_ENUM(NSInteger, OIDErrorCodeOAuth) {
    */
   OIDErrorCodeOAuthUnsupportedGrantType = -11,
 
-  /*! @remarks invalid_redirect_uri
+  /*! @remarks invalid_redirect_url
       @see https://openid.net/specs/openid-connect-registration-1_0.html#RegistrationError
    */
   OIDErrorCodeOAuthInvalidRedirectURI = -12,
@@ -356,7 +356,7 @@ typedef NS_ENUM(NSInteger, OIDErrorCodeOAuthRegistration) {
    */
   OIDErrorCodeOAuthRegistrationInvalidRequest = OIDErrorCodeOAuthInvalidRequest,
 
-  /*! @remarks invalid_redirect_uri
+  /*! @remarks invalid_redirect_url
       @see https://openid.net/specs/openid-connect-registration-1_0.html#RegistrationError
    */
   OIDErrorCodeOAuthRegistrationInvalidRedirectURI = OIDErrorCodeOAuthInvalidRedirectURI,

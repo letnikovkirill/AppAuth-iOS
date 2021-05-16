@@ -49,7 +49,7 @@ static NSString *const kScopeKey = @"scope";
 /*! @brief Key used to encode the @c redirectURL property for @c NSSecureCoding, and on the URL
         request.
  */
-static NSString *const kRedirectURLKey = @"redirect_uri";
+static NSString *const kRedirectURLKey = @"redirect_url";
 
 /*! @brief Key used to encode the @c state property for @c NSSecureCoding, and on the URL request.
  */

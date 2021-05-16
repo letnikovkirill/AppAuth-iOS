@@ -80,7 +80,7 @@ extern NSString *const OIDOAuthorizationRequestCodeChallengeMethodS256;
 @property(nonatomic, readonly, nullable) NSString *scope;
 
 /*! @brief The client's redirect URI.
-    @remarks redirect_uri
+    @remarks redirect_url
     @see https://tools.ietf.org/html/rfc6749#section-3.1.2
  */
 @property(nonatomic, readonly, nullable) NSURL *redirectURL;

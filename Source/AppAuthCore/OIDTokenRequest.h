@@ -54,7 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, readonly, nullable) NSString *authorizationCode;
 
 /*! @brief The client's redirect URI.
-    @remarks redirect_uri
+    @remarks redirect_url
     @see https://tools.ietf.org/html/rfc6749#section-4.1.3
  */
 @property(nonatomic, readonly, nullable) NSURL *redirectURL;
@@ -151,11 +151,6 @@ NS_ASSUME_NONNULL_BEGIN
             codeVerifier:(nullable NSString *)codeVerifier
     additionalParameters:(nullable NSDictionary<NSString *, NSString *> *)additionalParameters
     NS_DESIGNATED_INITIALIZER;
-
-/*! @brief Designated initializer for NSSecureCoding.
-    @param aDecoder Unarchiver object to decode
- */
-- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
 
 /*! @brief Constructs an @c NSURLRequest representing the token request.
     @return An @c NSURLRequest representing the token request.

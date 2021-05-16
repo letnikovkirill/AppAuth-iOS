@@ -22,7 +22,7 @@ NSString *const OIDTokenEndpointAuthenticationMethodParam = @"token_endpoint_aut
 
 NSString *const OIDApplicationTypeParam = @"application_type";
 
-NSString *const OIDRedirectURIsParam = @"redirect_uris";
+NSString *const OIDRedirectURIsParam = @"redirect_urls";
 
 NSString *const OIDResponseTypesParam = @"response_types";
 

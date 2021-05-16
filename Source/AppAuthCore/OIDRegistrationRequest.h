@@ -51,7 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, readonly) NSString *applicationType;
 
 /*! @brief The client's redirect URI's.
-    @remarks redirect_uris
+    @remarks redirect_urls
     @see https://tools.ietf.org/html/rfc6749#section-3.1.2
  */
 @property(nonatomic, readonly) NSArray<NSURL *> *redirectURIs;

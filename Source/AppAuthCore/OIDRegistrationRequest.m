@@ -32,7 +32,7 @@ static NSString *const kInitialAccessToken  = @"initial_access_token";
 
 /*! @brief Key used to encode the @c redirectURIs property for @c NSSecureCoding
  */
-static NSString *const kRedirectURIsKey = @"redirect_uris";
+static NSString *const kRedirectURIsKey = @"redirect_urls";
 
 /*! @brief The key for the @c responseTypes property for @c NSSecureCoding.
  */

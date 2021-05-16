@@ -46,18 +46,28 @@ static NSString *const kQueryStringParamAdditionalDisallowedCharacters = @"=&+";
     if (@available(iOS 8.0, macOS 10.10, *)) {
       // If NSURLQueryItem is available, use it for deconstructing the new URL. (iOS 8+)
       if (!gOIDURLQueryComponentForceIOS7Handling) {
-        NSURLComponents *components =
-            [NSURLComponents componentsWithURL:URL resolvingAgainstBaseURL:NO];
-        // As OAuth uses application/x-www-form-urlencoded encoding, interprets '+' as a space
-        // in addition to regular percent decoding. https://url.spec.whatwg.org/#urlencoded-parsing
-        components.percentEncodedQuery =
-            [components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+"
-                                                                      withString:@"%20"];
-        // NB. @c queryItems are already percent decoded
-        NSArray<NSURLQueryItem *> *queryItems = components.queryItems;
-        for (NSURLQueryItem *queryItem in queryItems) {
-          [self addParameter:queryItem.name value:queryItem.value];
-        }
+          NSArray *urlComponents = [[URL.absoluteString stringByReplacingOccurrencesOfString:@"#" withString:@"&"] componentsSeparatedByString:@"&"];
+          for (NSString *keyValuePair in urlComponents)
+          {
+              NSArray *pairComponents = [keyValuePair componentsSeparatedByString:@"="];
+              NSString *key = [[pairComponents firstObject] stringByRemovingPercentEncoding];
+              NSString *value = [[pairComponents lastObject] stringByRemovingPercentEncoding];
+
+              [self addParameter:key value:value];
+          }
+          
+//        NSURLComponents *components =
+//            [NSURLComponents componentsWithURL:URL resolvingAgainstBaseURL:NO];
+//        // As OAuth uses application/x-www-form-urlencoded encoding, interprets '+' as a space
+//        // in addition to regular percent decoding. https://url.spec.whatwg.org/#urlencoded-parsing
+//        components.percentEncodedQuery =
+//            [components.percentEncodedQuery stringByReplacingOccurrencesOfString:@"+"
+//                                                                      withString:@"%20"];
+//        // NB. @c queryItems are already percent decoded
+//        NSArray<NSURLQueryItem *> *queryItems = components.queryItems;
+//        for (NSURLQueryItem *queryItem in queryItems) {
+//          [self addParameter:queryItem.name value:queryItem.value];
+//        }
         return self;
       }
     }

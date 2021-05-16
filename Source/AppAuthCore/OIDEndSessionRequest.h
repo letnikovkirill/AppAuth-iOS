@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, readonly) OIDServiceConfiguration *configuration;
 
 /*! @brief The client's redirect URI.
-    @remarks post_logout_redirect_uri
+    @remarks post_logout_redirect_url
     @see http://openid.net/specs/openid-connect-session-1_0.html#RPLogout
  */
 @property(nonatomic, readonly, nullable) NSURL *postLogoutRedirectURL;

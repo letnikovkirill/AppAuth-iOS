@@ -34,7 +34,7 @@ static NSString *const kStateKey = @"state";
 
 /*! @brief Key used to encode the @c postLogoutRedirectURL property for @c NSSecureCoding, and on the URL request.
  */
-static NSString *const kPostLogoutRedirectURLKey = @"post_logout_redirect_uri";
+static NSString *const kPostLogoutRedirectURLKey = @"post_logout_redirect_url";
 
 /*! @brief Key used to encode the @c idTokenHint property for @c NSSecureCoding, and on the URL request.
  */
